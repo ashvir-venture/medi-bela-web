@@ -3,6 +3,7 @@ import { site } from '@/config/site'
 import type { Dict, Lang } from '@/i18n'
 import { BrandMark } from './BrandMark'
 import { LangToggle } from './LangToggle'
+import { MobileMenu } from './MobileMenu'
 
 export function SiteHeader({ lang, dict }: { lang: Lang; dict: Dict }) {
   const home = `/${lang}/`
@@ -14,6 +15,7 @@ export function SiteHeader({ lang, dict }: { lang: Lang; dict: Dict }) {
     { href: `${home}#faq`, label: dict.nav.faq },
     { href: `${home}#contact`, label: dict.nav.contact },
   ]
+  const cta = site.launched ? undefined : { href: `/${lang}/play/`, label: dict.nav.playCta }
 
   return (
     <header className="site-header on-dark">
@@ -31,11 +33,12 @@ export function SiteHeader({ lang, dict }: { lang: Lang; dict: Dict }) {
         </nav>
         <div className="header-actions">
           <LangToggle lang={lang} label={dict.nav.language} />
-          {!site.launched && (
-            <Link href={`/${lang}/play/`} className="btn btn-accent btn-sm header-cta">
-              {dict.nav.playCta}
+          {cta && (
+            <Link href={cta.href} className="btn btn-accent btn-sm header-cta">
+              {cta.label}
             </Link>
           )}
+          <MobileMenu links={links} cta={cta} openLabel={dict.nav.menu} closeLabel={dict.nav.closeMenu} />
         </div>
       </div>
       <span className="scroll-progress" aria-hidden="true" />

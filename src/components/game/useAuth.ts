@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import type { Session, SupabaseClient } from '@supabase/supabase-js'
 import { getSupabase } from '@/lib/supabase'
-import { AppError } from '@/lib/errors'
 
 export type AuthState =
   | { status: 'loading' }
@@ -53,8 +52,11 @@ export function useAuth(): AuthState {
 export async function signUpWithPhone(sb: SupabaseClient, phone: string, password: string, fullName: string) {
   const { data, error } = await sb.auth.signUp({ phone, password, options: { data: { full_name: fullName } } })
   if (error) throw error
-  // With confirmations turned on (later, with SMS) there is no session until the code is entered.
-  if (!data.session) throw new AppError('verification_needed')
+  if (data.session) return
+  // No session back: try signing straight in with the same details, so registering works
+  // without any code. If "Confirm phone" is ON in Supabase this fails with verification_needed.
+  const { error: signInError } = await sb.auth.signInWithPassword({ phone, password })
+  if (signInError) throw signInError
 }
 
 export async function signInWithPhone(sb: SupabaseClient, phone: string, password: string) {

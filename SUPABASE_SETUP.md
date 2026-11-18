@@ -76,8 +76,8 @@ Without SMS verification:
   several accounts with made-up numbers. Mitigations in place: per-IP rate limits, too-fast answers
   flagged, the contest rules (one person, own number, right to disqualify), and **winners are
   verified by calling the number** (LAUNCH_RUNBOOK.md).
-- Forgotten passwords can't be reset by the user; the sign-in screen tells them to use the contact
-  form. An admin can delete the account (`admin_queries.sql` §10) so they can sign up again.
+- Forgotten passwords can't be reset by the user (no reset screen for now); they can write in via
+  the contact form. An admin can delete the account (`admin_queries.sql` §10) so they can sign up again.
 
 To add SMS (same HTTP gateway as the app):
 1. Database → Extensions → enable `pg_net`. Store the gateway key in **Vault** (never in SQL files).

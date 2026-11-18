@@ -22,7 +22,9 @@
     "home": "Home",
     "language": "Language",
     "playCta": "Play & win",
-    "aboutUs": "About us"
+    "aboutUs": "About us",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
   },
   "hero": {
     "eyebrow": "Coming soon to Android",
@@ -249,7 +251,6 @@
       "fullName": "Your name",
       "fullNameHint": "Private: only used to contact you. Never shown publicly.",
       "phone": "Mobile number",
-      "phoneHint": "Bangladeshi number, e.g. 01712345678",
       "password": "Password",
       "passwordHint": "At least 8 characters.",
       "show": "Show",
@@ -257,7 +258,6 @@
       "submitSignUp": "Create account",
       "submitSignIn": "Sign in",
       "working": "Please wait…",
-      "forgot": "Forgot your password? Reset by SMS is coming soon. Until then, write to us using the contact form on the home page.",
       "note": "Only the quiz and the waitlist need an account. The rest of the website is open to everyone."
     },
     "onboarding": {

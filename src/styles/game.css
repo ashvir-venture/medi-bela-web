@@ -631,3 +631,77 @@
   font-weight: 600;
   text-align: center;
 }
+
+/* ---------- Compact card: sign up / sign in / nickname ---------- */
+.game-card-compact {
+  max-width: 25rem;
+  padding: clamp(1.125rem, 0.75rem + 1.6vw, 1.75rem);
+  border-radius: var(--r-lg);
+}
+
+.game-card-compact .game-title {
+  font-size: var(--fs-lg);
+}
+
+.game-card-compact .game-body {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+}
+
+.game-card-compact .auth-tabs {
+  margin-top: var(--sp-4);
+  padding: 3px;
+}
+
+.game-card-compact .auth-tab {
+  min-height: 38px;
+  font-size: var(--fs-sm);
+}
+
+.game-card-compact .game-form {
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.game-card-compact .field {
+  gap: 6px;
+}
+
+.game-card-compact .input {
+  min-height: 44px;
+  padding: var(--sp-2) var(--sp-3);
+}
+
+.game-card-compact .input-with-btn .input {
+  padding-right: 4.5rem;
+}
+
+.game-card-compact .input-btn {
+  min-width: 3.75rem;
+  font-size: var(--fs-xs);
+}
+
+.game-card-compact .check {
+  font-size: var(--fs-sm);
+}
+
+.game-card-compact .btn-block {
+  margin-top: var(--sp-2);
+  min-height: 46px;
+}
+
+.game-card-compact .game-hint {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-xs);
+}
+
+.game-card-compact .check {
+  grid-template-columns: 20px 1fr;
+  gap: var(--sp-2);
+}
+
+.game-card-compact .check input {
+  width: 18px;
+  height: 18px;
+}

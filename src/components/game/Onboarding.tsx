@@ -62,7 +62,7 @@ export function Onboarding({
   }
 
   return (
-    <GameCard>
+    <GameCard compact>
       <h1 className="game-title">{o.title}</h1>
       <p className="game-body">{o.body}</p>
       <form className="game-form" onSubmit={submit} noValidate>
@@ -118,7 +118,7 @@ export function Onboarding({
 
         {formError && <ErrorNote text={formError} />}
 
-        <button type="submit" className="btn btn-accent btn-lg btn-block" disabled={busy}>
+        <button type="submit" className="btn btn-accent btn-block" disabled={busy}>
           {busy && <span className="spinner" aria-hidden="true" />}
           {o.submit}
         </button>

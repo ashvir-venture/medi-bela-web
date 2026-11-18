@@ -15,8 +15,8 @@ function prefersReducedMotion() {
 }
 
 /** Card wrapper used by every game screen. */
-export function GameCard({ children, wide }: { children: React.ReactNode; wide?: boolean }) {
-  return <div className={`game-card${wide ? ' game-card-wide' : ''}`}>{children}</div>
+export function GameCard({ children, wide, compact }: { children: React.ReactNode; wide?: boolean; compact?: boolean }) {
+  return <div className={`game-card${wide ? ' game-card-wide' : ''}${compact ? ' game-card-compact' : ''}`}>{children}</div>
 }
 
 export function Loading({ label }: { label: string }) {
@@ -43,7 +43,7 @@ type FieldErrors = Partial<Record<'name' | 'phone' | 'password', string>>
 
 /**
  * Mobile number + password: "Create account" or "Sign in". The only way to sign in.
- * SMS verification and SMS password reset come later (SUPABASE_SETUP.md).
+ * No SMS code for now: registering signs the person straight in (SUPABASE_SETUP.md).
  */
 export function AuthGate({
   sb,
@@ -103,7 +103,7 @@ export function AuthGate({
   }
 
   return (
-    <GameCard>
+    <GameCard compact>
       <h1 className="game-title">{title}</h1>
       <p className="game-body">{body}</p>
 
@@ -156,11 +156,7 @@ export function AuthGate({
             placeholder="01XXXXXXXXX"
             maxLength={20}
             aria-invalid={fieldErrors.phone ? 'true' : undefined}
-            aria-describedby={`${id}-phone-hint`}
           />
-          <span id={`${id}-phone-hint`} className="field-hint">
-            {g.phoneHint}
-          </span>
           {fieldErrors.phone && <span className="field-error">{fieldErrors.phone}</span>}
         </div>
 
@@ -198,7 +194,7 @@ export function AuthGate({
 
         {formError && <ErrorNote text={formError} />}
 
-        <button type="submit" className="btn btn-accent btn-lg btn-block" disabled={busy}>
+        <button type="submit" className="btn btn-accent btn-block" disabled={busy}>
           {busy ? (
             <>
               <span className="spinner" aria-hidden="true" /> {g.working}
@@ -209,7 +205,6 @@ export function AuthGate({
             g.submitSignIn
           )}
         </button>
-        {mode === 'signin' && <p className="field-hint">{g.forgot}</p>}
       </form>
       <p className="game-hint">{g.note}</p>
     </GameCard>
