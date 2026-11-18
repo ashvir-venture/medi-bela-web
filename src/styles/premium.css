@@ -1,0 +1,701 @@
+/*
+ * Premium dark layer: depth, light and motion. Loaded after globals.css and game.css.
+ * Every animation here is decorative; prefers-reduced-motion (globals.css) stops them all,
+ * and each one has a sensible resting state.
+ */
+
+/* ---------- Page atmosphere ---------- */
+body {
+  background:
+    radial-gradient(90rem 50rem at 50% -20rem, rgba(20, 61, 107, 0.35), transparent 70%),
+    var(--paper);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(92, 200, 212, 0.35);
+  color: var(--text);
+}
+
+/* Hairline that fades in from the edges between sections */
+.section + .section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(72rem, 90%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(92, 200, 212, 0.28), transparent);
+}
+
+.section-tint {
+  background:
+    radial-gradient(50rem 30rem at 0% 0%, rgba(92, 200, 212, 0.06), transparent 70%),
+    var(--paper-2);
+}
+
+.section-dark {
+  background:
+    radial-gradient(60rem 36rem at 100% 0%, rgba(92, 200, 212, 0.1), transparent 65%),
+    radial-gradient(50rem 30rem at 0% 100%, rgba(20, 61, 107, 0.45), transparent 70%),
+    var(--ink-900);
+}
+
+/* ---------- Header: scroll progress (scroll-driven, progressive enhancement) ---------- */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--accent), var(--pulse-2));
+  opacity: 0;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    opacity: 1;
+    animation: progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Brand badge: the real logo on a white disc (it is navy on white) */
+.brand-badge {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 6px 18px -6px rgba(92, 200, 212, 0.6);
+  overflow: hidden;
+}
+
+.brand-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: min(100svh, 56rem);
+  display: grid;
+  align-items: center;
+}
+
+/* Soft aurora light that drifts slowly */
+.hero-aurora {
+  position: absolute;
+  inset: -20%;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    radial-gradient(30rem 22rem at 70% 30%, rgba(92, 200, 212, 0.22), transparent 70%),
+    radial-gradient(26rem 20rem at 25% 70%, rgba(121, 201, 133, 0.12), transparent 70%),
+    radial-gradient(34rem 26rem at 90% 80%, rgba(20, 61, 107, 0.6), transparent 70%);
+  filter: blur(20px);
+  animation: aurora 22s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, 3%, 0) scale(1.06);
+  }
+  100% {
+    transform: translate3d(3%, -2%, 0) scale(1.02);
+  }
+}
+
+/* Faint monitor grid, fading out towards the edges */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(92, 200, 212, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(92, 200, 212, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at 50% 55%, #000 10%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 55%, #000 10%, transparent 70%);
+}
+
+.hero-title em {
+  font-style: italic;
+  background: linear-gradient(100deg, #e8eef6 10%, var(--accent) 55%, var(--pulse-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ECG: after the draw, a bright blip keeps travelling along the line, like a monitor */
+.hero-ecg .ecg-line,
+.hero-ecg .ecg-glow {
+  stroke: var(--pulse);
+}
+
+.hero-ecg .ecg-blip {
+  fill: none;
+  stroke: #e8fbfd;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0.035 0.965;
+  stroke-dashoffset: 1.035;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(92, 200, 212, 0.9));
+  animation:
+    blip-in 0.4s ease 2.3s forwards,
+    blip-run 3.2s linear 2.3s infinite;
+}
+
+@keyframes blip-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blip-run {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Two phones, gently floating and tilted */
+.hero-phones {
+  position: relative;
+  width: min(100%, 25rem);
+  height: 33rem;
+  margin-inline: auto;
+}
+
+.hero-phones::before {
+  content: '';
+  position: absolute;
+  inset: 12% 8%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(92, 200, 212, 0.35), transparent 65%);
+  filter: blur(30px);
+}
+
+.hero-phones > div {
+  position: absolute;
+}
+
+.hero-phones .phone-front {
+  right: 4%;
+  top: 0;
+  z-index: 2;
+  animation: float 7s ease-in-out infinite;
+}
+
+.hero-phones .phone-back {
+  left: 0;
+  top: 3.5rem;
+  z-index: 1;
+  opacity: 0.92;
+  animation: float-b 8s ease-in-out 0.6s infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}
+
+@keyframes float-b {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-6deg);
+  }
+}
+
+@media (max-width: 959px) {
+  .hero-phones {
+    height: 29rem;
+  }
+
+  .hero-phones .phone-back {
+    left: 4%;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-phones {
+    height: 26rem;
+  }
+}
+
+/* Phone frame on dark: brushed edge + teal rim light */
+.phone {
+  background: linear-gradient(150deg, #33465f, #0b1626 45%, #1b2d47);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 30px 60px -20px rgba(0, 0, 0, 0.9),
+    0 0 50px -20px rgba(92, 200, 212, 0.5);
+}
+
+.phone-screen {
+  background: #f3f6f9;
+}
+
+/* ---------- Buttons: shimmer on the primary call to action ---------- */
+.btn-accent {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -12px rgba(92, 200, 212, 0.8);
+}
+
+.btn-accent::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+
+.btn-accent:hover::after {
+  transform: translateX(120%);
+  transition: transform 0.9s var(--ease-out);
+}
+
+.btn-shine::after {
+  animation: shine 6s ease-in-out 3s infinite;
+}
+
+@keyframes shine {
+  0%,
+  80% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.btn-accent:hover {
+  box-shadow: var(--glow);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* ---------- Features ---------- */
+.feature-item {
+  position: relative;
+  transition: transform var(--dur-mid) var(--ease-out);
+}
+
+.feature-item::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--accent), var(--pulse-2));
+  transition: transform 0.6s var(--ease-out);
+}
+
+.feature-item:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-item:hover {
+  transform: translateY(-3px);
+}
+
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--sp-4);
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(92, 200, 212, 0.25);
+  transition: box-shadow var(--dur-mid);
+}
+
+.feature-item:hover .feature-icon {
+  box-shadow: var(--glow);
+}
+
+.feature-lead .phone {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ---------- How it works: flowing connector ---------- */
+@media (min-width: 860px) {
+  .steps::before {
+    background-image: repeating-linear-gradient(90deg, var(--accent) 0 10px, transparent 10px 20px);
+    background-size: 40px 1px;
+    opacity: 0.55;
+    animation: flow 1.6s linear infinite;
+  }
+}
+
+@keyframes flow {
+  to {
+    background-position: 40px 0;
+  }
+}
+
+.step-num {
+  background: var(--white);
+  border-color: rgba(92, 200, 212, 0.35);
+  box-shadow: 0 0 0 6px var(--paper), 0 0 30px -6px rgba(92, 200, 212, 0.6);
+}
+
+.step:hover .step-num {
+  animation: beat 0.9s ease;
+}
+
+@keyframes beat {
+  30% {
+    transform: scale(1.12);
+  }
+  60% {
+    transform: scale(0.96);
+  }
+}
+
+/* ---------- Screenshots ---------- */
+.shots figure .phone {
+  transition: transform 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+}
+
+.shots figure:hover .phone {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 40px 70px -20px rgba(0, 0, 0, 0.9),
+    0 0 70px -15px rgba(92, 200, 212, 0.7);
+}
+
+.shots figcaption {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ---------- About (app's own About us) ---------- */
+.vision-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--sp-3);
+  margin-top: var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
+  border-radius: var(--r-pill);
+  border: 1px solid rgba(92, 200, 212, 0.3);
+  background: var(--accent-soft);
+}
+
+.vision-chip span {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.vision-chip strong {
+  color: var(--accent);
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: 500;
+}
+
+.goals {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-6) 0 0;
+  display: grid;
+  gap: var(--sp-4);
+  counter-reset: goal;
+}
+
+.goals li {
+  counter-increment: goal;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--line);
+  background: var(--glass);
+  color: var(--text);
+}
+
+.goals li::before {
+  content: counter(goal, decimal-leading-zero);
+  font-family: var(--font-newsreader), serif;
+  font-style: italic;
+  color: var(--accent);
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  margin-top: var(--sp-6);
+}
+
+.team-card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3) var(--sp-5) var(--sp-3) var(--sp-3);
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line);
+  background: var(--glass);
+  text-decoration: none;
+  transition: border-color var(--dur-mid), transform var(--dur-mid) var(--ease-out);
+}
+
+.team-card:hover {
+  border-color: rgba(92, 200, 212, 0.5);
+  transform: translateY(-2px);
+}
+
+.team-card img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px var(--accent-soft), 0 0 0 3px rgba(92, 200, 212, 0.4);
+}
+
+.team-card strong {
+  display: block;
+  font-size: var(--fs-md);
+}
+
+.team-card small {
+  display: block;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  line-height: 1.4;
+}
+
+/* Bigger team cards on the About page */
+.team-lg .team-card {
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+  flex: 1 1 18rem;
+  align-items: flex-start;
+}
+
+.team-lg .team-card img {
+  width: 88px;
+  height: 88px;
+}
+
+/* ---------- Contact numbers (from the app's Support page) ---------- */
+.contacts {
+  display: grid;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--glass);
+}
+
+.contact-row .num {
+  font-weight: 600;
+  margin-right: auto;
+}
+
+/* ---------- Leaderboard ---------- */
+.board-row {
+  transition: background-color var(--dur-mid);
+}
+
+.board-row:hover {
+  background: rgba(92, 200, 212, 0.06);
+}
+
+.live-dot::before {
+  background: var(--ok-strong);
+  box-shadow: 0 0 0 0 rgba(121, 201, 133, 0.6);
+  animation: live-ring 2s ease-out infinite;
+}
+
+@keyframes live-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(121, 201, 133, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(121, 201, 133, 0);
+  }
+}
+
+.medal {
+  border-color: var(--ink-900);
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.8);
+}
+
+/* ---------- Forms on dark ---------- */
+.input {
+  background: rgba(5, 12, 22, 0.6);
+}
+
+.input::placeholder {
+  color: rgba(169, 184, 201, 0.55);
+}
+
+.form,
+.game-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 40%),
+    var(--white);
+  border-color: var(--line);
+  box-shadow: var(--shadow-lg);
+}
+
+.game-card {
+  position: relative;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(160deg, rgba(92, 200, 212, 0.45), transparent 40%, transparent 70%, rgba(121, 201, 133, 0.3));
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background:
+    radial-gradient(40rem 20rem at 50% 0%, rgba(92, 200, 212, 0.08), transparent 70%),
+    var(--ink-950);
+}
+
+.footer-logo {
+  width: 150px;
+  height: auto;
+  border-radius: var(--r-md);
+  background: #fff;
+  padding: 6px 10px;
+}
+
+.about-label {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-2);
+}
+
+.about-intro {
+  margin-top: var(--sp-6);
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+  max-width: 34rem;
+}
+
+.about-sub {
+  font-size: var(--fs-lg);
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--text);
+}
+
+.text-link {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.legal-group {
+  margin-top: var(--sp-8);
+  padding-bottom: var(--sp-3);
+  border-bottom: 1px solid rgba(92, 200, 212, 0.35);
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.legal-group:first-child {
+  margin-top: 0;
+}
+
+:root:lang(bn) .legal-group {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.page-hero {
+  background:
+    radial-gradient(50rem 24rem at 90% 0%, rgba(92, 200, 212, 0.14), transparent 70%),
+    var(--ink-900);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero .vision-chip {
+  margin-top: var(--sp-5);
+}
+
+.prose .goals,
+.prose .team,
+.prose .contacts {
+  padding: 0;
+}
+
+.team-card .text-link {
+  display: inline-block;
+  margin-top: var(--sp-2);
+  font-size: var(--fs-sm);
+}
+
+/* Bangla faces have no true italic: keep the gradient, skip the synthetic slant. */
+:root:lang(bn) .hero-title em {
+  font-style: normal;
+}

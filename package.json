@@ -1,0 +1,32 @@
+{
+  "name": "medi-bela-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && node scripts/fix-export-segments.mjs",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "serve": "node scripts/serve-out.mjs 3000",
+    "test:e2e": "playwright test",
+    "db:migrate": "bash scripts/db.sh migrate",
+    "db:test": "bash scripts/db.sh test",
+    "og": "node scripts/make-og.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "gsap": "^3.15.1",
+    "next": "^16.4.6",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.6",
+    "typescript": "^6.0.3"
+  }
+}

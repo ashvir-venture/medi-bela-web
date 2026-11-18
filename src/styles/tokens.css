@@ -1,0 +1,114 @@
+/*
+ * Medi-Bela design tokens: the ONLY place brand values live.
+ *
+ * Palette: the Medi-Bela app's own DARK theme (owner's pinned demo "Rafi's / Abba's Medi-Bela",
+ * AppTheme dark tokens): deep navy surfaces, teal primary, green "Taken", amber warnings.
+ * The website is dark by design (premium, calm). Token names are semantic; several keep their
+ * earlier names (--paper = page background, --white = raised surface) so components need no edits.
+ *
+ * Contrast (WCAG AA, checked): --text on --paper 15.8:1, --text-muted on --paper 8.6:1,
+ * --on-primary on --accent 8.1:1, --accent on --paper 9.6:1, --text-muted on --white 6.9:1.
+ */
+:root {
+  color-scheme: dark;
+
+  /* Navy depth scale (darkest → lightest) */
+  --ink-950: #03080f;
+  --ink-900: #050c16; /* app --page (dark) */
+  --ink-800: #0b1626; /* app --bg (dark) */
+  --ink-700: #14243b; /* app --surface (dark) */
+  --ink-500: #2a3e5a; /* app --line (dark) */
+  --ink-300: #3a5274; /* app --line2 (dark) */
+  --ink-100: #1b2d47; /* app --surface2 (dark) */
+
+  /* Surfaces */
+  --paper: #060e1a; /* page background */
+  --paper-2: #0a1524; /* tinted section */
+  --paper-3: #14243b; /* skeleton / track */
+  --white: #0f1d31; /* raised surface (cards, forms) */
+  --surface-2: #14243b;
+  --line: rgba(169, 184, 201, 0.16);
+  --line-dark: rgba(169, 184, 201, 0.14);
+  --glass: rgba(20, 36, 59, 0.55);
+
+  /* Brand: teal primary (app --primary dark), navy band, leaf green */
+  --accent: #5cc8d4;
+  --accent-hover: #7fd6df;
+  --accent-soft: #0e3e47;
+  --on-accent: #00363d;
+  --brand-navy: #143d6b; /* logo / app band */
+  --brand-teal: #0f7c8a; /* app --primary (light) */
+  --pulse: #5cc8d4; /* ECG line */
+  --pulse-2: #79c985; /* leaf green highlight */
+
+  /* States (app dark tokens) */
+  --ok: #a6ddae;
+  --ok-strong: #79c985;
+  --ok-soft: #173a21;
+  --bad: #ffb4ab;
+  --bad-soft: #4a1714;
+  --gold: #f2b266;
+  --gold-soft: #3a2610;
+
+  /* Text */
+  --text: #e8eef6;
+  --text-muted: #a9b8c9;
+  --on-dark: #e8eef6;
+  --on-dark-muted: #a9b8c9;
+  --focus: #7fd6df;
+
+  /* Type: families come from next/font CSS variables (see src/styles/fonts.ts) */
+  --font-display: var(--font-newsreader), 'Iowan Old Style', Georgia, serif;
+  --font-body: var(--font-hind), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --lh-body: 1.6;
+  --lh-tight: 1.12;
+
+  /* Fluid type scale (320px → 1280px) */
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;
+  --fs-lg: clamp(1.1875rem, 1.1rem + 0.4vw, 1.375rem);
+  --fs-xl: clamp(1.5rem, 1.3rem + 0.9vw, 2rem);
+  --fs-2xl: clamp(1.875rem, 1.5rem + 1.8vw, 3rem);
+  --fs-3xl: clamp(2.375rem, 1.7rem + 3.4vw, 4.75rem);
+
+  /* Spacing (4px base) */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --section-y: clamp(4rem, 3rem + 5vw, 8rem);
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --container: 72rem;
+
+  /* Radii: one family, used consistently */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+
+  /* Elevation: on dark, depth = soft black shadow + a hairline highlight */
+  --shadow-sm: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 12px 32px -12px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 40px 80px -30px rgba(0, 0, 0, 0.85);
+  --glow: 0 0 0 1px rgba(92, 200, 212, 0.25), 0 10px 40px -10px rgba(92, 200, 212, 0.45);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur-mid: 320ms;
+  --dur-slow: 700ms;
+}
+
+/* Bangla pages: matching serif display face, taller line-height for conjuncts and matras. */
+:root:lang(bn) {
+  --font-display: var(--font-noto-serif-bn), var(--font-newsreader), serif;
+  --lh-body: 1.75;
+  --lh-tight: 1.3;
+}

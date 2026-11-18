@@ -4,3 +4,15 @@ out/
 .env
 .env.local
 .DS_Store
+# Next / TypeScript
+next-env.d.ts
+*.tsbuildinfo
+# Playwright
+playwright-report/
+test-results/
+blob-report/
+.env.test.local
+
+# Local copies of the project (not part of the repo)
+/medi-bela-web/
+/*.zip

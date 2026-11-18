@@ -1,0 +1,372 @@
+{
+  "meta": {
+    "siteName": "Medi-Bela",
+    "title": "Medi-Bela: medicine reminders and family care for Bangladesh",
+    "description": "Medi-Bela turns a pharmacist-checked prescription into daily medicine reminders and alerts your family when a dose is missed. Join the waitlist and play the daily quiz.",
+    "rulesTitle": "Contest rules",
+    "privacyTitle": "Privacy policy",
+    "termsTitle": "Terms of use",
+    "playTitle": "Play & Win",
+    "waitlistTitle": "Join the waitlist",
+    "aboutTitle": "About us",
+    "aboutDescription": "Who builds Medi-Bela, our mission and what we work for."
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "about": "About",
+    "features": "Features",
+    "how": "How it works",
+    "play": "Play & Win",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "home": "Home",
+    "language": "Language",
+    "playCta": "Play & win",
+    "aboutUs": "About us"
+  },
+  "hero": {
+    "eyebrow": "Coming soon to Android",
+    "titleA": "Every dose, on time.",
+    "titleB": "Your family, close by.",
+    "lede": "Medi-Bela turns a pharmacist-checked prescription into daily medicine reminders, and tells your family when a dose is missed. Made for Bangladesh, in Bangla and English.",
+    "ctaPlay": "Join the waitlist & play",
+    "ctaWaitlist": "Just join the waitlist",
+    "note": "Sign up with your mobile number · one try a day · top 3 win an attractive prize",
+    "screenLabel": "Home screen",
+    "screenBackLabel": "Today's medicine"
+  },
+  "about": {
+    "eyebrow": "What is Medi-Bela",
+    "statement": "A medicine-care app for Bangladesh, built around the people who look after you.",
+    "p1": "Medi-Bela helps patients take their medicines on time and helps families care for each other. A pharmacist checks every prescription before it becomes a reminder, so your schedule is prepared by a person, not guessed by a machine.",
+    "p2": "It speaks Bangla and English, keeps working without internet and catches up when you are back online.",
+    "roles": [
+      {
+        "who": "Patients",
+        "what": "Get reminders, mark doses taken, keep readings and health records in one place."
+      },
+      {
+        "who": "Families",
+        "what": "A caregiver can help manage medicines and is alerted when a dose is missed."
+      },
+      {
+        "who": "Pharmacists",
+        "what": "Check each prescription and prepare the schedule, or send it back with a note."
+      }
+    ],
+    "teamLink": "Meet the team"
+  },
+  "features": {
+    "eyebrow": "Features",
+    "title": "Everything a daily medicine routine needs. Nothing it doesn't.",
+    "leadTitle": "Reminders that ring like an alarm.",
+    "leadText": "Each dose rings with an alarm tone, even when the app is closed. Tap Taken or Later right on the reminder.",
+    "leadSteps": [
+      "Rings at the dose time, then rings again if you don't respond",
+      "The lock screen shows only the time and how many medicines, never their names",
+      "Your family is alerted if the dose is still missed"
+    ],
+    "leadScreen": "Reminder screen",
+    "items": [
+      {
+        "title": "Prescription to schedule",
+        "text": "Upload a photo of your prescription. A pharmacist checks it and prepares your medicines. You confirm, adjust times or meal timing, and the reminders are made for you."
+      },
+      {
+        "title": "Family care",
+        "text": "One family member can be the caregiver: help upload prescriptions, manage medicines and see dose status. Anyone can choose Hide from family."
+      },
+      {
+        "title": "Medicine box",
+        "text": "Tell the app how many you have. It counts down with every dose taken and lets you know when you are running low."
+      },
+      {
+        "title": "Readings and records",
+        "text": "Log blood sugar, blood pressure, weight and more. Keep doctor visits, test reminders and report photos together, and make a 30-day summary PDF for your doctor."
+      },
+      {
+        "title": "A careful AI assistant",
+        "text": "Ask general health questions in Bangla or English. It never diagnoses, never picks a medicine for you and never tells you a dose."
+      },
+      {
+        "title": "Easy for everyone",
+        "text": "Bangla first, English one tap away. Larger text, an Easy mode with one big Taken button and quick calls to your caregiver or 999, and a dark mode."
+      }
+    ]
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "From a paper prescription to peace of mind, in three steps.",
+    "steps": [
+      {
+        "title": "Upload your prescription",
+        "text": "Take a photo of the prescription in the app and send it."
+      },
+      {
+        "title": "A pharmacist checks it",
+        "text": "A pharmacist prepares your medicine list and timings. You confirm it, or ask for an edit."
+      },
+      {
+        "title": "Stay on track, together",
+        "text": "Medi-Bela reminds you at every dose and keeps your caregiver in the loop."
+      }
+    ]
+  },
+  "screens": {
+    "eyebrow": "A look inside",
+    "title": "Calm, clear and easy to read.",
+    "placeholder": "Screenshot coming soon",
+    "items": [
+      "Home",
+      "Today's medicine",
+      "Reminder",
+      "Family",
+      "Health"
+    ]
+  },
+  "play": {
+    "eyebrow": "Play & Win",
+    "title": "A daily quiz, until launch day.",
+    "lede": "Answer 5 quick questions about Medi-Bela and everyday health. Correct answers given faster score more. Your best day counts.",
+    "prize": "When the app launches, the top 3 players win an attractive prize.",
+    "rules": [
+      {
+        "b": "One try a day.",
+        "t": "Resets at midnight, Bangladesh time."
+      },
+      {
+        "b": "5 questions, 20 seconds each.",
+        "t": "Correct and quick earns more points."
+      },
+      {
+        "b": "Wrong or too late scores 0.",
+        "t": "Nobody can get a perfect score; speed decides."
+      },
+      {
+        "b": "Your best day counts.",
+        "t": "Ties go to whoever finished first."
+      }
+    ],
+    "ctaPlay": "Play today's quiz",
+    "ctaRules": "Full rules",
+    "boardTitle": "Top players",
+    "boardLive": "Live",
+    "boardEmpty": "No scores yet. Be the first on the board.",
+    "boardError": "The leaderboard can't load right now.",
+    "boardSoon": "The leaderboard opens when the contest starts.",
+    "pts": "pts",
+    "you": "You",
+    "rank": "Rank",
+    "player": "Player",
+    "score": "Score"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Questions, answered.",
+    "items": [
+      {
+        "q": "What is Medi-Bela?",
+        "a": "A medicine-reminder and family-care app for Bangladesh. You upload a prescription, a pharmacist checks it, and the app reminds you at every dose. Your family is alerted if a dose is missed."
+      },
+      {
+        "q": "When can I download the app?",
+        "a": "We are preparing the Android launch. Join the waitlist and we will contact you on your mobile number when it is ready."
+      },
+      {
+        "q": "Why do I need an account to play?",
+        "a": "Only the quiz and the waitlist need an account (your mobile number and a password), so each person plays once a day and winners can be contacted. Your number is never shown publicly."
+      },
+      {
+        "q": "Is the quiz free?",
+        "a": "Yes. Playing is free. You get one try every day until the app launches."
+      },
+      {
+        "q": "How are points calculated?",
+        "a": "Each correct answer gives between 500 and 975 points: the faster you answer, the more you get. Wrong answers and timeouts give 0. The maximum for one day is 4,875."
+      },
+      {
+        "q": "Does this website collect medical information?",
+        "a": "No. We only keep your name and mobile number, your nickname, your quiz answers and your consent choices. Please never send symptoms or medical details through the contact form."
+      },
+      {
+        "q": "Does the AI assistant replace my doctor?",
+        "a": "No. It gives general health information only. It never diagnoses, never suggests a medicine for your problem and never gives a dose. Always talk to your doctor."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Talk to us.",
+    "lede": "Questions about the app, the contest or working together? Send us a message.",
+    "notice": "Please don't share symptoms, prescriptions or any other medical details here.",
+    "name": "Your name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thank you. Your message has been sent and we will reply by email.",
+    "error": "We couldn't send your message. Please check your connection and try again.",
+    "notConfigured": "The contact form isn't set up yet. Please try again later.",
+    "nameRequired": "Please enter your name.",
+    "emailInvalid": "Please enter a valid email address.",
+    "messageShort": "Please write at least 10 characters."
+  },
+  "footer": {
+    "tagline": "Medicine reminders and family care for Bangladesh.",
+    "contest": "Contest",
+    "legal": "Legal",
+    "follow": "Follow",
+    "rules": "Contest rules",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "play": "Play & Win",
+    "waitlist": "Join the waitlist",
+    "rights": "All rights reserved.",
+    "disclaimer": "This website does not give medical advice.",
+    "socialSoon": "Social links coming soon"
+  },
+  "launched": {
+    "eyebrow": "Now on Android",
+    "store": "Get it on",
+    "storeName": "Google Play",
+    "contestOver": "The quiz has ended. Thank you for playing!"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This page doesn't exist or has moved.",
+    "home": "Go to the home page"
+  },
+  "game": {
+    "loading": "Loading…",
+    "back": "Back to home",
+    "signOut": "Sign out",
+    "signedInAs": "Signed in",
+    "gate": {
+      "title": "Sign in to play",
+      "body": "Create an account with your mobile number and a password, or sign in. Your name and number stay private; only the nickname you choose appears on the leaderboard.",
+      "tabSignUp": "Create account",
+      "tabSignIn": "Sign in",
+      "fullName": "Your name",
+      "fullNameHint": "Private: only used to contact you. Never shown publicly.",
+      "phone": "Mobile number",
+      "phoneHint": "Bangladeshi number, e.g. 01712345678",
+      "password": "Password",
+      "passwordHint": "At least 8 characters.",
+      "show": "Show",
+      "hide": "Hide",
+      "submitSignUp": "Create account",
+      "submitSignIn": "Sign in",
+      "working": "Please wait…",
+      "forgot": "Forgot your password? Reset by SMS is coming soon. Until then, write to us using the contact form on the home page.",
+      "note": "Only the quiz and the waitlist need an account. The rest of the website is open to everyone."
+    },
+    "onboarding": {
+      "title": "Choose your public nickname",
+      "body": "This name appears on the public leaderboard. Please don't use your real full name.",
+      "nickname": "Nickname",
+      "nicknameHint": "2–24 characters: Bangla or English letters, numbers, space, _ or .",
+      "nicknameFixed": "You can't change your nickname later.",
+      "language": "Quiz language",
+      "consentContest": "I agree to the contest rules and to join the Medi-Bela waitlist. I understand winners are contacted on their mobile number.",
+      "consentResearch": "Optional: Medi-Bela may ask me for feedback to improve the app.",
+      "submit": "Save and continue",
+      "rulesLink": "Read the contest rules"
+    },
+    "lobby": {
+      "hello": "Hi, {name}",
+      "readyTitle": "Today's quiz is ready",
+      "rules": [
+        "5 questions, 20 seconds each.",
+        "Faster correct answers earn more points.",
+        "One try a day. Once you start, today's try is used."
+      ],
+      "start": "Start",
+      "starting": "Starting…",
+      "resume": "Continue my quiz",
+      "resumeNote": "You have a quiz in progress. The timer kept running.",
+      "playedTitle": "You've played today",
+      "todayScore": "Today's score",
+      "best": "Your best",
+      "rank": "Your rank",
+      "noRank": "Not ranked yet",
+      "nextIn": "Next quiz in",
+      "closedTitle": "The contest is closed",
+      "closedBody": "No new tries can be started. The leaderboard stays open.",
+      "waitlisted": "You're on the waitlist."
+    },
+    "question": {
+      "of": "Question {n} of {total}",
+      "upTo": "Up to {points} pts",
+      "seconds": "s",
+      "timeUp": "Time's up",
+      "correct": "Correct!",
+      "wrong": "Not quite",
+      "correctWas": "Correct answer:",
+      "tooFast": "That was faster than humanly possible, so it scores 0 and will be reviewed.",
+      "late": "That answer arrived too late, so it scores 0.",
+      "next": "Next question",
+      "finish": "See my result",
+      "options": "Answer options",
+      "submitting": "Checking…"
+    },
+    "result": {
+      "title": "Today's score",
+      "points": "points",
+      "time": "Total time",
+      "rank": "Your rank",
+      "best": "Your best",
+      "top10": "Top 10",
+      "comeBack": "Come back tomorrow for another try.",
+      "nextIn": "Next quiz in"
+    },
+    "polls": {
+      "title": "Help shape Medi-Bela",
+      "body": "Optional and not scored. One tap per question.",
+      "skip": "Skip",
+      "skipAll": "Skip all",
+      "thanks": "Thank you for your feedback!",
+      "of": "{n} of {total}"
+    },
+    "waitlist": {
+      "title": "Join the Medi-Bela waitlist",
+      "body": "Create an account (or sign in) and we will keep your place. We will contact you on your mobile number when the app launches.",
+      "consent": "I agree to join the Medi-Bela waitlist and to be contacted on my mobile number about the launch.",
+      "consentResearch": "Optional: Medi-Bela may ask me for feedback to improve the app.",
+      "join": "Join the waitlist",
+      "joining": "Saving…",
+      "doneTitle": "You're on the list!",
+      "doneBody": "Thank you. We will contact you on {phone} when Medi-Bela is ready.",
+      "playToo": "Play today's quiz too"
+    }
+  },
+  "errors": {
+    "not_authenticated": "Your session has ended. Please sign in again.",
+    "session_expired": "Your session has ended. Please sign in again.",
+    "profile_incomplete": "Please finish choosing your nickname first.",
+    "contest_closed": "The contest is closed, so no new tries can start. The leaderboard is still open.",
+    "disqualified": "This account can't take part in the contest. If you think this is a mistake, contact us.",
+    "not_enough_questions": "The quiz isn't ready yet. Please try again later.",
+    "already_onboarded": "Your nickname is already set.",
+    "consent_required": "Please tick the box to agree to the contest rules and the waitlist.",
+    "invalid_name": "Use 2–24 Bangla or English letters, numbers, space, _ or . No links or email addresses.",
+    "name_not_allowed": "That nickname isn't allowed. Please choose another one.",
+    "name_taken": "That nickname is already taken. Please choose another one.",
+    "invalid_language": "Please choose Bangla or English.",
+    "not_found": "We couldn't find that quiz. Please go back and start again.",
+    "already_completed": "This quiz is already finished.",
+    "wrong_position": "That question has already moved on. Loading the current one…",
+    "invalid_state": "Something got out of step. Loading the current question…",
+    "invalid_option": "That answer isn't one of the options.",
+    "offline": "You seem to be offline. Check your connection and try again.",
+    "not_configured": "The game isn't set up yet. Please try again later.",
+    "generic": "Something went wrong. Please try again.",
+    "invalid_phone": "Enter a Bangladeshi mobile number, like 01712345678.",
+    "weak_password": "Use a password of at least 8 characters.",
+    "phone_taken": "This mobile number already has an account. Please sign in instead.",
+    "invalid_credentials": "The mobile number or password is wrong.",
+    "name_required": "Please enter your name (at least 2 letters).",
+    "rate_limited": "Too many tries. Please wait a few minutes and try again.",
+    "signup_closed": "Sign-up isn’t open right now. Please try again later.",
+    "verification_needed": "Your number needs to be verified first. Please try again later."
+  }
+}
