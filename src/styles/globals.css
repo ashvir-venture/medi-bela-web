@@ -1508,17 +1508,6 @@ textarea.input {
   margin-top: var(--sp-3);
 }
 
-.draft-banner {
-  display: inline-block;
-  margin-top: var(--sp-4);
-  padding: 4px 12px;
-  border-radius: var(--r-pill);
-  background: var(--gold-soft);
-  color: var(--gold);
-  font-size: var(--fs-xs);
-  font-weight: 600;
-}
-
 .prose {
   max-width: 44rem;
   padding-block: var(--sp-7) var(--sp-9);

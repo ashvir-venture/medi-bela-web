@@ -1,4 +1,3 @@
-import { site } from '@/config/site'
 import type { Lang } from '@/i18n'
 import type { LegalDoc, LegalSection } from '@/components/layout/LegalPage'
 import { appPublic } from '@/content/app-public'
@@ -19,7 +18,6 @@ export const terms: Record<Lang, LegalDoc> = {
     title: 'Terms of use',
     intro: 'The rules for using this website, the quiz and the waitlist.',
     updated: `Last updated: ${UPDATED}`,
-    draft: 'Draft: subject to legal review',
     sections: [
       ...appPart('en', 'In the Medi-Bela app'),
       { h: 'On this website (quiz and waitlist)', group: true },
@@ -70,7 +68,7 @@ export const terms: Record<Lang, LegalDoc> = {
       },
       {
         h: '8. Changes and contact',
-        p: [`We may update these terms and will post changes on this page. Questions: ${site.contactEmail}.`],
+        p: [`We may update these terms and will post changes on this page. Questions: use the contact form on the home page.`],
       },
     ],
   },
@@ -78,7 +76,6 @@ export const terms: Record<Lang, LegalDoc> = {
     title: 'ব্যবহারের শর্তাবলি',
     intro: 'এই ওয়েবসাইট, কুইজ আর ওয়েটলিস্ট ব্যবহারের নিয়ম।',
     updated: `সর্বশেষ হালনাগাদ: ${UPDATED}`,
-    draft: 'খসড়া: আইনি পর্যালোচনা বাকি',
     sections: [
       ...appPart('bn', 'Medi-Bela অ্যাপে'),
       { h: 'এই ওয়েবসাইটে (কুইজ ও ওয়েটলিস্ট)', group: true },
@@ -127,7 +124,7 @@ export const terms: Record<Lang, LegalDoc> = {
       },
       {
         h: '৮. পরিবর্তন ও যোগাযোগ',
-        p: [`আমরা এই শর্তাবলি হালনাগাদ করতে পারি এবং পরিবর্তন এই পেজে জানাব। প্রশ্ন থাকলে: ${site.contactEmail}।`],
+        p: [`আমরা এই শর্তাবলি হালনাগাদ করতে পারি এবং পরিবর্তন এই পেজে জানাব। প্রশ্ন থাকলে হোম পেজের যোগাযোগ ফর্ম ব্যবহার করুন।`],
       },
     ],
   },

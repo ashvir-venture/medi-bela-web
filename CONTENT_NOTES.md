@@ -84,7 +84,7 @@ re-check every `source_section` in `supabase/migrations/004_seed.sql`, and re-ru
 ## Open questions (current)
 
 1. Prize details and contest start date (rules say "attractive prize", ends at app launch).
-2. Production domain, real contact email (placeholder `hello@medi-bela.example`), brand social links.
+2. Done 2026-11-21: domain medi-bela-web.vercel.app, no public email (contact form only), Facebook link set.
 3. Region: keep Tokyo or move to Singapore before launch (cheap now; see SUPABASE_SETUP.md).
 4. Should the app's Support text (Later 30 min) be corrected? (see above)
 5. Native-speaker review of all Bangla, legal review of rules/privacy/terms.

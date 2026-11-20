@@ -4,19 +4,17 @@
  */
 export const site = {
   /** Production origin, no trailing slash. Set NEXT_PUBLIC_SITE_URL. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://medi-bela.example').replace(/\/$/, ''),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://medi-bela-web.vercel.app').replace(/\/$/, ''),
   /** false = waitlist / play buttons; true = store download badges (SPEC §7.1). */
   launched: process.env.NEXT_PUBLIC_LAUNCHED === 'true',
   /** PLACEHOLDER: Play Store listing once published. */
   playStoreUrl: 'https://play.google.com/store/apps/details?id=PLACEHOLDER',
-  /** PLACEHOLDER: social profiles; empty url = hidden. */
+  /** Social profiles; empty url = hidden. */
   socials: [
-    { name: 'Facebook', url: '' },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61596355804101' },
     { name: 'YouTube', url: '' },
     { name: 'LinkedIn', url: '' },
   ],
-  /** PLACEHOLDER: public contact email shown on legal pages. */
-  contactEmail: 'hello@medi-bela.example',
   /**
    * App screenshots (WebP, 540×1170) captured from the owner's pinned demo artifacts
    * "Rafi's / Abba's Medi-Bela" by scripts/capture-screens.mjs. Order matches screens.items

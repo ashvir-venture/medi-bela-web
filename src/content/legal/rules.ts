@@ -1,4 +1,3 @@
-import { site } from '@/config/site'
 import type { Lang } from '@/i18n'
 import type { LegalDoc } from '@/components/layout/LegalPage'
 
@@ -13,11 +12,10 @@ export const rules: Record<Lang, LegalDoc> = {
     title: 'Contest rules',
     intro: 'The Medi-Bela "Play & Win" daily quiz: how it works, how points are counted and how winners are chosen.',
     updated: `Last updated: ${UPDATED}`,
-    draft: 'Draft: subject to legal review',
     sections: [
       {
         h: '1. Organizer',
-        p: [`The contest is run by the Medi-Bela team. Contact: ${site.contactEmail}.`],
+        p: [`The contest is run by the Medi-Bela team. Contact us using the contact form on the home page.`],
       },
       {
         h: '2. Dates',
@@ -46,7 +44,6 @@ export const rules: Record<Lang, LegalDoc> = {
         ul: [
           'A correct answer scores between 500 and 975 points. The faster you answer, the more points you get.',
           'Formula: points = 500 + 500 × (1 − t ÷ 20), rounded down, where t is your answer time in seconds minus 0.8 seconds for network delay, counted as at least 1 second and at most 20 seconds.',
-          'So the most for one question is 975 and the most for one day is 4,875. A perfect 5,000 is not possible by design.',
           'A wrong answer, no answer or an answer that arrives after the time limit (with 2.3 seconds of allowance) scores 0.',
           'Answers given in under 0.7 seconds are flagged, score 0 and are reviewed. A flagged try does not appear on the leaderboard unless the review clears it.',
           'Time is measured by our server, not by your device.',
@@ -96,11 +93,10 @@ export const rules: Record<Lang, LegalDoc> = {
     title: 'প্রতিযোগিতার নিয়ম',
     intro: 'Medi-Bela-র “খেলুন ও জিতুন” প্রতিদিনের কুইজ: কীভাবে খেলবেন, পয়েন্ট কীভাবে গোনা হয় আর বিজয়ী কীভাবে বাছাই হয়।',
     updated: `সর্বশেষ হালনাগাদ: ${UPDATED}`,
-    draft: 'খসড়া: আইনি পর্যালোচনা বাকি',
     sections: [
       {
         h: '১. আয়োজক',
-        p: [`প্রতিযোগিতাটি পরিচালনা করছে Medi-Bela টিম। যোগাযোগ: ${site.contactEmail}।`],
+        p: [`প্রতিযোগিতাটি পরিচালনা করছে Medi-Bela টিম। যোগাযোগের জন্য হোম পেজের যোগাযোগ ফর্ম ব্যবহার করুন।`],
       },
       {
         h: '২. সময়কাল',
@@ -129,7 +125,6 @@ export const rules: Record<Lang, LegalDoc> = {
         ul: [
           'সঠিক উত্তরে ৫০০ থেকে ৯৭৫ পয়েন্ট। যত দ্রুত উত্তর, তত বেশি পয়েন্ট।',
           'সূত্র: পয়েন্ট = ৫০০ + ৫০০ × (১ − t ÷ ২০), নিচের পূর্ণসংখ্যায়; এখানে t হলো সেকেন্ডে আপনার উত্তরের সময় থেকে নেটওয়ার্কের জন্য ০.৮ সেকেন্ড বাদ দিয়ে, কমপক্ষে ১ আর সর্বোচ্চ ২০ সেকেন্ড ধরে।',
-          'তাই এক প্রশ্নে সর্বোচ্চ ৯৭৫ আর এক দিনে সর্বোচ্চ ৪,৮৭৫। পুরো ৫,০০০ পাওয়া ইচ্ছা করেই অসম্ভব রাখা হয়েছে।',
           'ভুল উত্তর, উত্তর না দেওয়া, অথবা সময়সীমার পর (২.৩ সেকেন্ড ছাড়সহ) পৌঁছানো উত্তরে ০।',
           '০.৭ সেকেন্ডের কম সময়ে দেওয়া উত্তর চিহ্নিত হয়, ০ পায় এবং পর্যালোচনা করা হয়। পর্যালোচনায় ঠিক প্রমাণিত না হলে চিহ্নিত চেষ্টা লিডারবোর্ডে আসে না।',
           'সময় মাপে আমাদের সার্ভার, আপনার ডিভাইস নয়।',

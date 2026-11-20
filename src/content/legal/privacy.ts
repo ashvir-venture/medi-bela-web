@@ -1,4 +1,3 @@
-import { site } from '@/config/site'
 import type { Lang } from '@/i18n'
 import type { LegalDoc, LegalSection } from '@/components/layout/LegalPage'
 import { appPublic } from '@/content/app-public'
@@ -22,13 +21,12 @@ export const privacy: Record<Lang, LegalDoc> = {
     title: 'Privacy policy',
     intro: 'What this website collects, why, who handles it and how to have it deleted. This covers the website, quiz and waitlist, not the Medi-Bela app.',
     updated: `Last updated: ${UPDATED}`,
-    draft: 'Draft: subject to legal review',
     sections: [
       ...appPart('en', 'In the Medi-Bela app'),
       { h: 'On this website (quiz and waitlist)', group: true },
       {
         h: 'Who we are',
-        p: [`This website is run by the Medi-Bela team. Contact: ${site.contactEmail}.`],
+        p: [`This website is run by the Medi-Bela team. Contact us using the contact form on the home page.`],
       },
       {
         h: 'What we collect',
@@ -78,7 +76,7 @@ export const privacy: Record<Lang, LegalDoc> = {
       {
         h: 'Your choices and rights',
         p: [
-          `You can ask to see, correct or delete your data, or withdraw a consent, by writing to ${site.contactEmail} or using the contact form, with the mobile number you registered. We will reply within 30 days. Deleting your data removes you from the waitlist and the leaderboard.`,
+          `You can ask to see, correct or delete your data, or withdraw a consent, by writing to us through the contact form on the home page, with the mobile number you registered. We will reply within 30 days. Deleting your data removes you from the waitlist and the leaderboard.`,
         ],
       },
       {
@@ -91,13 +89,12 @@ export const privacy: Record<Lang, LegalDoc> = {
     title: 'গোপনীয়তা নীতি',
     intro: 'এই ওয়েবসাইট কী তথ্য নেয়, কেন নেয়, কারা তা সামলায় আর কীভাবে মুছে ফেলতে বলবেন। এটি ওয়েবসাইট, কুইজ ও ওয়েটলিস্টের জন্য, Medi-Bela অ্যাপের জন্য নয়।',
     updated: `সর্বশেষ হালনাগাদ: ${UPDATED}`,
-    draft: 'খসড়া: আইনি পর্যালোচনা বাকি',
     sections: [
       ...appPart('bn', 'Medi-Bela অ্যাপে'),
       { h: 'এই ওয়েবসাইটে (কুইজ ও ওয়েটলিস্ট)', group: true },
       {
         h: 'আমরা কারা',
-        p: [`এই ওয়েবসাইট পরিচালনা করে Medi-Bela টিম। যোগাযোগ: ${site.contactEmail}।`],
+        p: [`এই ওয়েবসাইট পরিচালনা করে Medi-Bela টিম। যোগাযোগের জন্য হোম পেজের যোগাযোগ ফর্ম ব্যবহার করুন।`],
       },
       {
         h: 'আমরা কী তথ্য নিই',
@@ -145,7 +142,7 @@ export const privacy: Record<Lang, LegalDoc> = {
       {
         h: 'আপনার অধিকার',
         p: [
-          `নিবন্ধিত মোবাইল নম্বর উল্লেখ করে ${site.contactEmail} ঠিকানায় বা যোগাযোগ ফর্মে লিখে আপনার তথ্য দেখতে, ঠিক করতে বা মুছে ফেলতে, অথবা কোনো সম্মতি তুলে নিতে বলতে পারেন। আমরা ৩০ দিনের মধ্যে উত্তর দেব। তথ্য মুছে ফেললে আপনি ওয়েটলিস্ট ও লিডারবোর্ড থেকেও সরে যাবেন।`,
+          `নিবন্ধিত মোবাইল নম্বর উল্লেখ করে হোম পেজের যোগাযোগ ফর্মে লিখে আপনার তথ্য দেখতে, ঠিক করতে বা মুছে ফেলতে, অথবা কোনো সম্মতি তুলে নিতে বলতে পারেন। আমরা ৩০ দিনের মধ্যে উত্তর দেব। তথ্য মুছে ফেললে আপনি ওয়েটলিস্ট ও লিডারবোর্ড থেকেও সরে যাবেন।`,
         ],
       },
       {

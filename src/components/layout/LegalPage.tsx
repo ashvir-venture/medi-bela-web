@@ -2,7 +2,7 @@ import type { Lang } from '@/i18n'
 
 /** A section, or (with `group`) a divider heading that groups the sections after it. */
 export type LegalSection = { h: string; p?: string[]; ul?: string[]; group?: boolean }
-export type LegalDoc = { title: string; intro: string; updated: string; draft: string; sections: LegalSection[] }
+export type LegalDoc = { title: string; intro: string; updated: string; sections: LegalSection[] }
 
 /** Renders a legal/text page from plain data (server component, static HTML). */
 export function LegalPage({ doc, lang }: { doc: LegalDoc; lang: Lang }) {
@@ -15,7 +15,6 @@ export function LegalPage({ doc, lang }: { doc: LegalDoc; lang: Lang }) {
           <p className="num" style={{ fontSize: 'var(--fs-sm)' }}>
             {doc.updated}
           </p>
-          <span className="draft-banner">{doc.draft}</span>
         </div>
       </header>
       <div className="container">

@@ -142,7 +142,7 @@
       },
       {
         "b": "Wrong or too late scores 0.",
-        "t": "Nobody can get a perfect score; speed decides."
+        "t": "Answer before the timer runs out."
       },
       {
         "b": "Your best day counts.",
@@ -184,7 +184,7 @@
       },
       {
         "q": "How are points calculated?",
-        "a": "Each correct answer gives between 500 and 975 points: the faster you answer, the more you get. Wrong answers and timeouts give 0. The maximum for one day is 4,875."
+        "a": "Each correct answer gives between 500 and 975 points: the faster you answer, the more you get. Wrong answers and timeouts give 0."
       },
       {
         "q": "Does this website collect medical information?",
